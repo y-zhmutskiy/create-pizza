@@ -1,0 +1,64 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": ["tsconfig.json"]
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "plugins": ["react", "react-hooks", "@typescript-eslint"],
+  "extends": ["eslint:recommended", "prettier"],
+  "ignorePatterns": ["node_modules/", "build/", "public/", "src/react-app-env.d.ts"],
+  "rules": {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error",
+    "prefer-const": "error",
+    "no-var": "error",
+    "object-shorthand": "error",
+    "quote-props": ["error", "as-needed"],
+    "prefer-object-spread": "error",
+    "no-array-constructor": "error",
+    "prefer-destructuring": [
+      "error",
+      {
+        "object": true,
+        "array": false
+      }
+    ],
+    "prefer-template": "error",
+    "prefer-spread": "error",
+    "prefer-arrow-callback": "error",
+    "no-multi-assign": "error",
+    "no-nested-ternary": "error",
+    "no-console": "warn",
+    "no-debugger": "warn",
+    "no-unused-vars": "error",
+    "no-alert": "error"
+  },
+
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ]
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "require('./package.json').dependencies.react"
+    }
+  }
+}
